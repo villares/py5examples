@@ -115,7 +115,7 @@ def update_geometry():
         gesture = gesture_array[i]
         if not gesture.exists:
             continue
-        if (i != current_gesture_id or not mouse_pressed):
+        if (i != current_gesture_id or not is_mouse_pressed):
             advance_gesture(gesture)
 
 

@@ -1,3 +1,6 @@
+import py5
+from py5 import sqrt, mag
+
 from java.awt import Polygon
 
 from vec3f import Vec3f
@@ -49,13 +52,13 @@ class Gesture(object):
                 self.jump_dy = self.path[self.n_points - 1].y - self.path[0].y
 
     def get_pressure_from_velocity(self, v):
-        scale = 18
+        scale_ = 18
         min_p = 0.02
         if self.n_points > 0:
             old_p = self.path[self.n_points - 1].p
         else:
             old_p = 0
-        return ((min_p + max(0, 1.0 - v / scale)) + (damp1 * old_p)) * damp_inv
+        return ((min_p + max(0, 1.0 - v / scale_)) + (damp1 * old_p)) * damp_inv
 
     def set_pressures():
         # pressures vary from 0...1
