@@ -1,11 +1,8 @@
-import py5
 from py5 import sqrt, mag
-
 from java.awt import Polygon
-
 from vec3f import Vec3f
 
-capacity = 600
+capacity = 300  # Originally 600 
 damp = 5.0
 damp_inv = 1.0 / damp
 damp1 = damp - 1
@@ -13,7 +10,12 @@ INIT_TH = 14
 
 
 class Gesture(object):
-
+    __slots__= (
+        'w', 'h', 'path', 'polygons', 'crosses',
+        'n_polys', 'jump_dx', 'jump_dy',
+        'n_points', 'exists', 'thickness',
+        )
+    
     def __init__(self, mw, mh):
         self.w = mw
         self.h = mh

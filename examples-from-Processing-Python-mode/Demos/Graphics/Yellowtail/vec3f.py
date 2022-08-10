@@ -1,5 +1,6 @@
 class Vec3f(object):
-
+    __slots__= ('x', 'y', 'p')
+    
     def __init__(self):
         self.set(0, 0, 0)
 
