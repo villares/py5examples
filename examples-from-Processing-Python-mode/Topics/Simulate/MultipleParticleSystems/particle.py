@@ -13,8 +13,8 @@ class Particle(object):
 
     # Method to update location
     def update(self):
-        self.velocity.add(self.acceleration)
-        self.location.add(self.velocity)
+        self.velocity += self.acceleration
+        self.location += self.velocity
         self.lifespan -= 2.0
 
     # Method to display

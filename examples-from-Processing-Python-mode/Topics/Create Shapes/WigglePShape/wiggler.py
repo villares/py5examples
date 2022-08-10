@@ -14,7 +14,7 @@ class Wiggler(object):
         for a in range(0, int(TWO_PI * 10), 2):
             ascaled = a * .1
             v = Py5Vector.from_heading(ascaled)
-            v.mult(100)
+            v *= 100
             self.original.append(v)
         # The PShape to be "wiggled".
         # Make the PShape with those vertices.
@@ -36,8 +36,8 @@ class Wiggler(object):
             pos = self.original[i]
             a = TWO_PI * noise(xoff, self.yoff)
             r = Py5Vector.from_heading(a)
-            r.mult(4)
-            r.add(pos)
+            r *= 4
+            r += pos
             # Set the location of each vertex to the one.
             self.s.set_vertex(i, r.x, r.y)
             # Increment perlin noise x value.

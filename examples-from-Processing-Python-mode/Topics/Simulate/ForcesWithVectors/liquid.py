@@ -34,7 +34,7 @@ class Liquid(object):
         drag_magnitude = self.c * speed * speed
         # Direction is inverse of velocity.
         drag = m.velocity.get()
-        drag.mult(-1)
+        drag *= -1
         # Scale according to magnitude.
         drag.set_mag(drag_magnitude)
         return drag

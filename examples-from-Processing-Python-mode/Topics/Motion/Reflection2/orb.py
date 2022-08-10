@@ -11,8 +11,8 @@ class Orb(object):
 
     def move(self):
         # Move orb.
-        self.velocity.add(Orb.Gravity)
-        self.position.add(self.velocity)
+        self.velocity += Orb.Gravity
+        self.position += self.velocity
 
     def display(self):
         # Draw orb.

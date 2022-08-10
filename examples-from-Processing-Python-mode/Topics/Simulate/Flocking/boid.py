@@ -18,7 +18,7 @@ class Boid(object):
 
     def apply_force(self, force):
         # We could add mass here if we want A = F / M
-        self.acceleration.add(force)
+        self.acceleration += force
 
     # We accumulate acceleration each time based on three rules.
     def flock(self, boids):
@@ -26,9 +26,9 @@ class Boid(object):
         ali = self.align(boids)  # Alignment
         coh = self.cohesion(boids)  # Cohesion
         # Arbitrarily weight these forces.
-        sep.mult(1.5)
-        ali.mult(1.0)
-        coh.mult(1.0)
+        sep *= 1.5
+        ali *= 1.0
+        coh *= 1.0
         # Add the force vectors to acceleration.
         self.apply_force(sep)
         self.apply_force(ali)
@@ -37,12 +37,12 @@ class Boid(object):
     # Method to update location.
     def update(self):
         # Update velocity.
-        self.velocity.add(self.acceleration)
+        self.velocity += self.acceleration
         # Limit speed.
         self.velocity.limit(self.maxspeed)
-        self.location.add(self.velocity)
+        self.location += self.velocity
         # Reset accelertion to 0 each cycle.
-        self.acceleration.mult(0)
+        self.acceleration *= 0
 
     # A method that calculates and applies a steering force towards a target.
     # STEER = DESIRED MINUS VELOCITY
@@ -51,7 +51,7 @@ class Boid(object):
         desired = target - self.location
         # Scale to maximum speed.
         desired.normalize()
-        desired.mult(self.maxspeed)
+        desired *= self.maxspeed
         # Above two lines of code below could be condensed with PVector setMag() method.
         # Not using this method until Processing.js catches up.
         # desired.setMag(maxspeed)
@@ -101,21 +101,21 @@ class Boid(object):
                 # Calculate vector pointing away from neighbor.
                 diff = self.location - other.location
                 diff.normalize()
-                diff.div(d)  # Weight by distance.
-                steer.add(diff)
+                diff /= d  # Weight by distance.
+                steer += diff
                 count += 1  # Keep track of how many
         # Average -- divide by how many
         if count == 0:
             return Py5Vector(0, 0)
         if count > 0:
-            steer.div(float(count))
+            steer /= float(count)
         # As long as the vector is greater than 0
         if steer.mag > 0:
             # First two lines of code below could be condensed with PVector setMag() method.
             # Implement Reynolds: Steering = Desired - Velocity
             steer.normalize()
-            steer.mult(self.maxspeed)
-            steer.sub(self.velocity)
+            steer *= self.maxspeed
+            steer -= self.velocity
             steer.limit(self.maxforce)
         return steer
 
@@ -128,15 +128,15 @@ class Boid(object):
         for other in boids:
             d = PVector.dist(self.location, other.location)
             if 0 < d < neighbordist:
-                sum.add(other.velocity)
+                sum += other.velocity
                 count += 1
         if count == 0:
             return Py5Vector(0, 0)
-        sum.div(float(count))
+        sum /= float(count)
         # First two lines of code below could be condensed with PVector setMag() method.
         # Implement Reynolds: Steering = Desired - Velocity
         sum.normalize()
-        sum.mult(self.maxspeed)
+        sum *= self.maxspeed
         steer = sum - self.velocity
         steer.limit(self.maxforce)
         return steer
@@ -152,10 +152,10 @@ class Boid(object):
         for other in boids:
             d = PVector.dist(self.location, other.location)
             if 0 < d < neighbordist:
-                sum.add(other.location)  # Add location.
+                sum += other.location  # Add location.
                 count += 1
         if count > 0:
-            sum.div(count)
+            sum /= count
             return self.seek(sum)  # Steer towards the location.
         else:
             return Py5Vector(0, 0)

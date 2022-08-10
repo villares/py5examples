@@ -20,14 +20,14 @@ class Particle(object):
     # Method to apply a force vector to the Particle object
     # Note we are ignoring "mass" here.
     def apply_force(self, f):
-        self.acc.add(f)
+        self.acc += f
 
     # Method to update location
     def update(self):
-        self.vel.add(self.acc)
-        self.loc.add(self.vel)
+        self.vel += self.acc
+        self.loc += self.vel
         self.lifespan -= 2.5
-        self.acc.mult(0)  # clear Acceleration.
+        self.acc *= 0  # clear Acceleration.
 
     # Method to display
     def render(self):

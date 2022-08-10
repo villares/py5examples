@@ -21,9 +21,9 @@ def setup():
 def draw():
     background(0)
     # Add velocity to the location.
-    location.add(velocity)
+    location += velocity
     # Add gravity to velocity.
-    velocity.add(gravity)
+    velocity += gravity
     # Bounce off edges.
     if location.x < 0 or location.x > width:
         velocity.x = velocity.x * -1

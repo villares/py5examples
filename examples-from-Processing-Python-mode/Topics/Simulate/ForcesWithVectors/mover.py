@@ -21,17 +21,17 @@ class Mover(object):
     # or A = F / M
     def apply_force(self, force):
         # Divide by mass.
-        f = PVector.div(force, self.mass)
+        f = force / self.mass
         # Accumulate all forces in acceleration.
-        self.acceleration.add(f)
+        self.acceleration += f
 
     def update(self):
         # Velocity changes according to acceleration.
-        self.velocity.add(self.acceleration)
+        self.velocity += self.acceleration
         # Location changes by velocity.
-        self.location.add(self.velocity)
+        self.location += self.velocity
         # We must clear acceleration each frame.
-        self.acceleration.mult(0)
+        self.acceleration *= 0
 
     # Draw Mover.
     def display(self):

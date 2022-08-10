@@ -26,7 +26,7 @@ class Particle(object):
         a = random(TWO_PI)
         speed = random(0.5, 4)
         self.velocity = Py5Vector(cos(a), sin(a))
-        self.velocity.mult(speed)
+        self.velocity *= speed
         self.lifespan = 255
         self.part.reset_matrix()
         self.part.translate(x, y)
@@ -36,6 +36,6 @@ class Particle(object):
 
     def update(self):
         self.lifespan -= 1
-        self.velocity.add(self.gravity)
+        self.velocity += self.gravity
         self.part.set_tint(color(255, self.lifespan))
         self.part.translate(self.velocity.x, self.velocity.y)

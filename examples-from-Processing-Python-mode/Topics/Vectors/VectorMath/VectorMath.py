@@ -20,11 +20,11 @@ def draw():
     center = Py5Vector(width / 2, height / 2)
     # Subtract center from mouse which results in a vector that points from
     # center to mouse
-    mouse.sub(center)
+    mouse -= center
     # Normalize the vector
     mouse.normalize()
     # Multiply its length by 150 (Scaling its length)
-    mouse.mult(150)
+    mouse *= 150
     translate(width / 2, height / 2)
     # Draw the resulting vector
     stroke(255)

@@ -116,7 +116,7 @@ class Cube(object):
 
     # Update location
     def update(self, bounds):
-        self.position.add(self.velocity)
+        self.position += self.velocity
 
         # Check wall collisions
         if self.position.x > bounds / 2 or self.position.x < -bounds / 2:

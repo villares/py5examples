@@ -26,11 +26,11 @@ class Mover(object):
         # Set magnitude of acceleration
         self.acceleration.set_mag(0.2)
         # Velocity changes according to acceleration
-        self.velocity.add(self.acceleration)
+        self.velocity += self.acceleration
         # Limit the velocity by topspeed
         self.velocity.limit(self.topspeed)
         # Location changes by velocity
-        self.location.add(self.velocity)
+        self.location += self.velocity
 
     def display(self):
         stroke(255)

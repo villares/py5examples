@@ -27,7 +27,7 @@ def setup():
 
     # Start ellipse at middle top of screen.
     position = Py5Vector(width / 2, 0)
-    velocity.mult(speed)
+    velocity *= speed
 
 
 def draw():
@@ -51,7 +51,7 @@ def draw():
     ellipse(position.x, position.y, radius * 2, radius * 2)
 
     # Move elipse.
-    position.add(velocity)
+    position += velocity
 
     # Normalized incidence vector.
     incidence = velocity * -1
@@ -68,7 +68,7 @@ def draw():
             # Assign reflection vector to direction vector.
             velocity.set(2 * normal.x * dot - incidence.x,
                          2 * normal.y * dot - incidence.y, 0)
-            velocity.mult(speed)
+            velocity *= speed
 
             # Draw base top normal at collision point.
             stroke(255, 128, 0)

@@ -14,16 +14,16 @@ class Planet(object):
 
     # Newton's 2nd Law (F = M*A) applied
     def apply_force(self, force):
-        f = PVector.div(force, self.mass)
-        self.acceleration.add(f)
+        f = force / self.mass
+        self.acceleration += f
 
     # Our motion algorithm (aka Euler Integration)
     def update(self):
         # Velocity changes according to acceleration.
-        self.velocity.add(self.acceleration)
+        self.velocity += self.acceleration
         # Location changes according to velocity.
-        self.location.add(self.velocity)
-        self.acceleration.mult(0)
+        self.location += self.velocity
+        self.acceleration *= 0
 
     # Draw the Planet.
     def display(self):

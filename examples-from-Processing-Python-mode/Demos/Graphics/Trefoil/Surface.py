@@ -63,8 +63,8 @@ def eval_normal(u, v):
     p = eval_point(u, v)
     tang_u = eval_point(u + 0.01, v)
     tang_v = eval_point(u, v + 0.01)
-    tang_u.sub(p)
-    tang_v.sub(p)
+    tang_u -= p
+    tang_v -= p
 
     norm_uv = tang_v.cross(tang_u)
     norm_uv.normalize()

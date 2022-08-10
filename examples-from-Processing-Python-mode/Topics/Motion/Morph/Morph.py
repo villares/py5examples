@@ -27,7 +27,7 @@ def setup():
         # Note we are not starting from 0 in order to match the
         # path of a circle.
         v = Py5Vector.from_heading(radians(angle - 135))
-        v.mult(100)
+        v *= 100
         circle.append(v)
 
         # Let's fill our morph ArrayList with blank PVectors while we're at it.
