@@ -13,7 +13,7 @@ class Wiggler(object):
         self.original = []
         for a in range(0, int(TWO_PI * 10), 2):
             ascaled = a * .1
-            v = PVector.fromAngle(ascaled)
+            v = Py5Vector.from_heading(ascaled)
             v.mult(100)
             self.original.append(v)
         # The PShape to be "wiggled".
@@ -35,7 +35,7 @@ class Wiggler(object):
             # location.
             pos = self.original[i]
             a = TWO_PI * noise(xoff, self.yoff)
-            r = PVector.fromAngle(a)
+            r = Py5Vector.from_heading(a)
             r.mult(4)
             r.add(pos)
             # Set the location of each vertex to the one.

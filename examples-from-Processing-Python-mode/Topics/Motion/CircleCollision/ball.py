@@ -1,16 +1,20 @@
+from py5 import *
+
 class Ball(object):
 
     def __init__(self, x, y, radius):
         self.position = Py5Vector(x, y)
-        self.velocity = PVector.random2D()
-        self.velocity.mult(3)
+        self.velocity = Py5Vector.random(2)
+        self.velocity *= 3
         self.radius = radius
         self.m = self.radius * 0.1
 
     def update(self):
-        self.position.add(self.velocity)
+        self.position += self.velocity
 
     def check_boundary_collision(self):
+        s =get_current_sketch()
+        width, height = s.width, s.height 
         if self.position.x > width - self.radius:
             self.position.x = width - self.radius
             self.velocity.x *= -1
@@ -26,13 +30,13 @@ class Ball(object):
 
     def check_collision(self, other):
         # Get distances between the balls components.
-        b_vect = PVector.sub(other.position, self.position)
+        b_vect = other.position - self.position
 
         # Calculate magnitude of the vector separating the balls.
-        b_vect_mag = b_vect.mag()
+        b_vect_mag = b_vect.mag
         if b_vect_mag < self.radius + other.radius:
             # Get angle of bVect.
-            theta = b_vect.heading()
+            theta = b_vect.heading
 
             # Precalculate trig values.
             sine = sin(theta)
@@ -40,7 +44,7 @@ class Ball(object):
 
             # bTemp will hold rotated ball positions. You just need to worry
             #  about bTemp[1] position.
-            b_temp = [Py5Vector(), Py5Vector()]
+            b_temp = [Py5Vector(0, 0), Py5Vector(0, 0)]
 
             # This ball's position is relative to the other so you can use the
             #  vector between them (bVect) as the reference point in the
@@ -51,7 +55,7 @@ class Ball(object):
             b_temp[1].y = cosine * b_vect.y - sine * b_vect.x
 
             # Rotate Temporary velocities.
-            v_temp = [Py5Vector(), Py5Vector()]
+            v_temp = [Py5Vector(0, 0), Py5Vector(0, 0)]
             v_temp[0].x = cosine * self.velocity.x + sine * self.velocity.y
             v_temp[0].y = cosine * self.velocity.y - sine * self.velocity.x
             v_temp[1].x = cosine * other.velocity.x + sine * other.velocity.y
@@ -60,7 +64,7 @@ class Ball(object):
             # Now that velocities are rotated, you can use 1D conservation of
             #  momentum equations to calculate the velocity along the x-
             #  axis.
-            v_final = [Py5Vector(), Py5Vector()]
+            v_final = [Py5Vector(0, 0), Py5Vector(0, 0)]
 
             # Rotated velocity for b[0].
             v_final[0].x = (((self.m - other.m) *
@@ -81,7 +85,7 @@ class Ball(object):
             # Rotate ball positions and velocities back Reverse signs in trig
             #  expressions to rotate in the opposite direction.
             # Rotate balls.
-            b_final = [Py5Vector(), Py5Vector()]
+            b_final = [Py5Vector(0, 0), Py5Vector(0, 0)]
             b_final[0].x = cosine * b_temp[0].x - sine * b_temp[0].y
             b_final[0].y = cosine * b_temp[0].y + sine * b_temp[0].x
             b_final[1].x = cosine * b_temp[1].x - sine * b_temp[1].y
@@ -90,7 +94,7 @@ class Ball(object):
             # Update balls to screen position.
             other.position.x = self.position.x + b_final[1].x
             other.position.y = self.position.y + b_final[1].y
-            self.position.add(b_final[0])
+            self.position += b_final[0]
 
             # Update velocities.
             self.velocity.x = cosine * v_final[0].x - sine * v_final[0].y

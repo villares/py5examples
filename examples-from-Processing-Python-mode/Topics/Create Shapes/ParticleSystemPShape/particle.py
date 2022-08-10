@@ -33,8 +33,8 @@ class Particle(object):
         a = random(TWO_PI)
         speed = random(0.5, 4)
         # A velocity with random angle and magnitude.
-        self.velocity = PVector.fromAngle(a)
-        self.velocity.mult(speed)
+        self.velocity = Py5Vector.from_heading(a)
+        self.velocity *= speed
         # Set lifespan.
         self.lifespan = 255
         # Set location using translate.
@@ -53,9 +53,9 @@ class Particle(object):
         # Decrease life.
         self.lifespan = self.lifespan - 1
         # Apply gravity.
-        self.velocity.add(self.gravity)
+        self.velocity += self.gravity
         self.part.set_tint(color(255, self.lifespan))
         # Move the particle according to its velocity,
         self.part.translate(self.velocity.x, self.velocity.y)
         # and also update the center
-        self.center.add(self.velocity)
+        self.center += self.velocity

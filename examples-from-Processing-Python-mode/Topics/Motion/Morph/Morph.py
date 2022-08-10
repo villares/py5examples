@@ -26,7 +26,7 @@ def setup():
     for angle in range(0, 360, 9):
         # Note we are not starting from 0 in order to match the
         # path of a circle.
-        v = PVector.fromAngle(radians(angle - 135))
+        v = Py5Vector.from_heading(radians(angle - 135))
         v.mult(100)
         circle.append(v)
 

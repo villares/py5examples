@@ -41,10 +41,10 @@ def draw_vector(v, loc, scayl):
         stroke(255)
         # Call vector heading function to get direction (note that pointing up is
         # a heading of 0) and rotate.
-        rotate(v.heading())
+        rotate(v.heading)
         # Calculate length of vector & scale it to be bigger or smaller if
         # necessary.
-        len = v.mag() * scayl
+        len = v.mag * scayl
         # Draw three lines to make an arrow (draw pointing up since we've rotate
         # to the proper direction).
         line(0, 0, len, 0)

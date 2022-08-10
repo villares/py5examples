@@ -30,7 +30,7 @@ class Liquid(object):
     # Calculate drag force.
     def drag(self, m):
         # Magnitude is coefficient * speed squared.
-        speed = m.velocity.mag()
+        speed = m.velocity.mag
         drag_magnitude = self.c * speed * speed
         # Direction is inverse of velocity.
         drag = m.velocity.get()

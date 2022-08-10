@@ -21,7 +21,7 @@ class CrazyParticle(Particle):
     def update(self):
         super(CrazyParticle, self).update()
         # Increment rotation based on horizontal velocity.
-        theta_vel = (self.velocity.x * self.velocity.mag()) / float(10.0)
+        theta_vel = (self.velocity.x * self.velocity.mag) / float(10.0)
         self.theta += theta_vel
 
     # This display() method overrides the parent class display() method.

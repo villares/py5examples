@@ -110,7 +110,7 @@ class Boid(object):
         if count > 0:
             steer.div(float(count))
         # As long as the vector is greater than 0
-        if steer.mag() > 0:
+        if steer.mag > 0:
             # First two lines of code below could be condensed with PVector setMag() method.
             # Implement Reynolds: Steering = Desired - Velocity
             steer.normalize()
