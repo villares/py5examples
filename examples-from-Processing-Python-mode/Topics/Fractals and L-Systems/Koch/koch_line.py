@@ -28,7 +28,7 @@ class KochLine(object):
 
     # This is easy, just 1/3 of the way
     def kochleft(self):
-        v = PVector.sub(self.b, self.a)
+        v = self.b - self.a
         v.div(3)
         v.add(self.a)
         return v
@@ -36,7 +36,7 @@ class KochLine(object):
     # More complicated, have to use a little trig to figure out where this
     # PVector is!
     def kochmiddle(self):
-        v = PVector.sub(self.b, self.a)
+        v = self.b - self.a
         v.div(3)
         p = self.a.get()
         p.add(v)
@@ -46,7 +46,7 @@ class KochLine(object):
 
     # Easy, just 2/3 of the way
     def kochright(self):
-        v = PVector.sub(self.a, self.b)
+        v = self.a - self.b
         v.div(3)
         v.add(self.b)
         return v

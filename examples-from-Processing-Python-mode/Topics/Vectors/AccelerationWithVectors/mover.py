@@ -22,7 +22,7 @@ class Mover(object):
     def update(self):
         # Compute a vector that points from location to mouse
         mouse = Py5Vector(mouse_x, mouse_y)
-        self.acceleration = PVector.sub(mouse, self.location)
+        self.acceleration = mouse - self.location
         # Set magnitude of acceleration
         self.acceleration.set_mag(0.2)
         # Velocity changes according to acceleration

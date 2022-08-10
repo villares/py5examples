@@ -14,7 +14,7 @@ class Sun(object):
 
     def attract(self, m):
         # Calculate direction of force.
-        force = PVector.sub(self.location, m.location)
+        force = self.location - m.location
         d = force.mag  # Distance between objects
         # Limiting the distance to eliminate "extreme" results for very close
         # or very far objects.

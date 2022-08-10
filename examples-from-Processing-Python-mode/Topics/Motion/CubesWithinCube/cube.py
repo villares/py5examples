@@ -17,7 +17,7 @@ class Cube(object):
         # Start in center
         self.position = Py5Vector()
         # Random velocity vector
-        self.velocity = PVector.random3D()
+        self.velocity = Py5Vector.random(3)
         # Also using PVector to hold rotation values for 3 axes
         # Random rotation
         self.rotation = Py5Vector(

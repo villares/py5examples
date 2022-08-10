@@ -8,7 +8,7 @@ N is the normal, and L is the incident vector.
 
 # Variables related to moving ball.
 # Calculate initial random velocity.
-velocity = PVector.random2D()
+velocity = Py5Vector.random(2)
 radius = 6
 speed = 3.5
 
@@ -41,7 +41,7 @@ def draw():
     quad(base1.x, base1.y, base2.x, base2.y, base2.x, height, 0, height)
 
     # Calculate base top normal.
-    base_delta = PVector.sub(base2, base1)
+    base_delta = base2 - base1
     base_delta.normalize()
     normal = Py5Vector(-base_delta.y, base_delta.x)
 
@@ -54,7 +54,7 @@ def draw():
     position.add(velocity)
 
     # Normalized incidence vector.
-    incidence = PVector.mult(velocity, -1)
+    incidence = velocity * -1
     incidence.normalize()
 
     # Detect and handle collision.

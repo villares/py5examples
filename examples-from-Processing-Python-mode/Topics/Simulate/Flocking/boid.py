@@ -48,7 +48,7 @@ class Boid(object):
     # STEER = DESIRED MINUS VELOCITY
     def seek(self, target):
         # A vector pointing from the location to the target.
-        desired = PVector.sub(target, self.location)
+        desired = target - self.location
         # Scale to maximum speed.
         desired.normalize()
         desired.mult(self.maxspeed)
@@ -56,7 +56,7 @@ class Boid(object):
         # Not using this method until Processing.js catches up.
         # desired.setMag(maxspeed)
         # Steering = Desired minus Velocity
-        steer = PVector.sub(desired, self.velocity)
+        steer = desired - self.velocity
         steer.limit(self.maxforce)  # Limit to maximum steering force.
         return steer
 
@@ -99,7 +99,7 @@ class Boid(object):
             # amount (0 when you are yourself).
             if 0 < d < desiredseparation:
                 # Calculate vector pointing away from neighbor.
-                diff = PVector.sub(self.location, other.location)
+                diff = self.location - other.location
                 diff.normalize()
                 diff.div(d)  # Weight by distance.
                 steer.add(diff)
@@ -137,7 +137,7 @@ class Boid(object):
         # Implement Reynolds: Steering = Desired - Velocity
         sum.normalize()
         sum.mult(self.maxspeed)
-        steer = PVector.sub(sum, self.velocity)
+        steer = sum - self.velocity
         steer.limit(self.maxforce)
         return steer
 
