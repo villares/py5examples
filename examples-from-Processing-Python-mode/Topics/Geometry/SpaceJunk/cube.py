@@ -1,3 +1,5 @@
+from py5 import *
+
 class Cube(object):
 
     def __init__(self, w, h, d, shift_x, shift_y, shift_z):
