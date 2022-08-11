@@ -24,7 +24,6 @@ def setup():
     half_width = width / 2
     half_height = height / 2
 
-
 def draw():
     global angle
     background(0)
