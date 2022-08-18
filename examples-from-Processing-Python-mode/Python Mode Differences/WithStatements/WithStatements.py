@@ -1,11 +1,11 @@
 """
 There are a number of functions that must eventually be followed by a
-partner function that "pops" or "closes" some context created by the
+partner function that 'pops' or 'closes' some context created by the
 first function. For example, every push_matrix() must eventually be
 followed by a pop_matrix().
 
 Python mode provides all of the same functions, but also takes advantage
-of the Python language's "with" statement to provide automatic context
+of the Python language's 'with' statement to provide automatic context
 management.
 
 So, for example, instead of
@@ -29,7 +29,7 @@ This has two advantages: indentation clearly reveals which lines of
 code are executed while the matrix is pushed, and you can't forget
 to pop_matrix(). Also, there's less code, which means fewer bugs!
 
-You can also use "with" statements in these contexts:
+You can also use 'with' statements in these contexts:
 
 Use this:                        Instead of this:
 
