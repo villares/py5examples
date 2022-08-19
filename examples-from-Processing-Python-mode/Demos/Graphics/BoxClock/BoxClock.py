@@ -38,9 +38,9 @@ def draw():
 def draw_shape():
     # `map`; "Re-maps a number from one range to another."
     # Scale time units to 3D coordinates.
-    x = map(second(), 0, 59, 1, 12)
-    y = map(minute(), 0, 59, 1, 12)
-    z = map(hour(), 0, 23, 1, 12)
+    x = remap(second(), 0, 59, 1, 12)
+    y = remap(minute(), 0, 59, 1, 12)
+    z = remap(hour(), 0, 23, 1, 12)
 
     scale(x, y, z)
     shape(fill_cube, 0, 0)
