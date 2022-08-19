@@ -1,5 +1,5 @@
 # An individual Particle
-
+from py5 import *  # this might need change in the future {{1}}
 
 class Particle(object):
 
@@ -22,8 +22,10 @@ class Particle(object):
                          self.part_size / 2, 0, sprite.height)
         self.part.end_shape()
         # Initialize center vector.
-        self.center = Py5Vector()
+        self.center = Py5Vector(0, 0)
         # Set the particle starting location.
+        width = get_current_sketch().width
+        height = get_current_sketch().height
         self.rebirth(width / 2, height / 2)
 
     def get_shape(self):
@@ -41,10 +43,12 @@ class Particle(object):
         self.part.reset_matrix()
         self.part.translate(x, y)
         # Update center vector.
-        self.center.set(x, y, 0)
+        self.center.xy = (x, y)
 
     # Is it off the screen, or its lifespan is over?
     def is_dead(self):
+        width = get_current_sketch().width
+        height = get_current_sketch().height
         return (self.center.x > width or self.center.x < 0
                 or self.center.y > height or self.center.y < 0 or
                 self.lifespan < 0)

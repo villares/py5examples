@@ -30,4 +30,4 @@ def draw():
     # Display frame rate.
     fill(255)
     text_size(16)
-    text("Frame rate: " + str(int(frame_rate)), 10, 20)
+    text("Frame rate: " + str(int(get_frame_rate())), 10, 20)
