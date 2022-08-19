@@ -28,7 +28,7 @@ def draw():
     for face in faces:
         rect(face.x, face.y, face.width, face.height)
     if show_fps:
-        text("%d fps" % frame_rate, 20, 20)
+        text("%d fps" % get_frame_rate(), 20, 20)
 
 
 def capture_event(c):

@@ -17,7 +17,7 @@ add_library('controlP5')
 class TextListener(ControlListener):
 
     def control_event(self, e):
-        print '%s -> %s' % (e.get_name(), e.get_string_value())
+        print('%s -> %s' % (e.get_name(), e.get_string_value()))
 
 
 def setup():

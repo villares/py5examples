@@ -27,7 +27,7 @@ hist.blend(hist_mask, 0, 0, 256, 256, 0, 0, 256, 256, ADD)
 dst = opencv.get_output()
 dst.load_pixels()
 
-for i in xrange(len(dst.pixels)):
+for i in range(len(dst.pixels)):
     input = Mat(Size(1, 1), CvType.CV_8UC3)
     input.set_to(color_to_scalar(dst.pixels[i]))
     output = opencv.imitate(input)

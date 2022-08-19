@@ -7,7 +7,7 @@ opencv.gray()
 opencv.threshold(70)
 dst = opencv.get_output()
 contours = opencv.find_contours()
-print "found %d contours" % contours.size()
+print("found %d contours" % contours.size())
 
 scale(0.5)
 image(src, 0, 0)
