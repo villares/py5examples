@@ -20,9 +20,9 @@ def draw():
     dx = w / width    # Increment x this amount per pixel
     dy = h / height   # Increment y this amount per pixel
     x = -w / 2                    # Start x at -1width / 2
-    for i in xrange(width):
+    for i in range(width):
         y = -h / 2                # Start y at -1height / 2
-        for j in xrange(height):
+        for j in range(height):
             r = sqrt((x * x) + (y * y))   # Convert cartesian to polar
             theta = atan2(y, x)           # Convert cartesian to polar
 
