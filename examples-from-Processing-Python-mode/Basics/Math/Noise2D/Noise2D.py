@@ -15,15 +15,15 @@ def setup():
 def draw():
     load_pixels()
     xoff = 0.0  # Start xoff at 0
-    detail = map(mouse_x, 0, width, 0.1, 0.6)
+    detail = remap(mouse_x, 0, width, 0.1, 0.6)
     noise_detail(8, detail)
 
     # For every x,y coordinate in a 2D space, calculate a noise value and
     # produce a brightness value
-    for x in xrange(width):
+    for x in range(width):
         xoff += increment     # Increment xoff
         yoff = 0.0     # For every xoff, start yoff at 0
-        for y in xrange(height):
+        for y in range(height):
             yoff += increment  # Increment yoff
 
             # Calculate noise and scale by 255
