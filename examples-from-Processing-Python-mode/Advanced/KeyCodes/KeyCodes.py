@@ -1,3 +1,5 @@
+# Not working
+
 from collections import defaultdict
 from java.awt.event import KeyEvent
 from java.lang.reflect import Modifier
@@ -16,6 +18,6 @@ def draw():
 
 def key_pressed():
     if key == CODED:
-        print key_names[key_code]
+        print(key_names[key_code])
     else:
-        print "key " + key
+        print("key " + key)
