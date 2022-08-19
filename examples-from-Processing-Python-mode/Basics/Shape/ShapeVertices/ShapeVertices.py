@@ -24,12 +24,12 @@ def draw():
 
     # Iterate over the children
     children = uk.get_child_count()
-    for i in xrange(children):
+    for i in range(children):
         child = uk.get_child(i)
         total = child.get_vertex_count()
 
         # Now we can actually get the vertices from each child
-        for j in xrange(total):
+        for j in range(total):
             v = child.get_vertex(j)
             # Cycling brightness for each vertex
             stroke((frame_count + (i + 1) * j) % 255)
