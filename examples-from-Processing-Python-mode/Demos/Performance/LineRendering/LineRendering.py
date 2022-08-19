@@ -10,7 +10,7 @@ def setup():
 def draw():
     background(255)
     stroke(0, 10)
-    for i in xrange(50000):
+    for i in range(50000):
         x0 = random(width)
         y0 = random(height)
         z0 = random(-100, 100)
@@ -25,4 +25,4 @@ def draw():
         line(x0, y0, z0, x1, y1, z1)
 
     if frame_count % 10 == 0:
-        print frame_rate
+        print(get_frame_rate())
