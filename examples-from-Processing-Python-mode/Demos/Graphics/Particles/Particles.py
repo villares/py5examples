@@ -20,4 +20,4 @@ def draw():
     ps.set_emitter(mouse_x, mouse_y)
     fill(255)
     text_size(16)
-    text("Frame rate: " + str(int(frame_rate)), 10, 20)
+    text("Frame rate: " + str(int(get_frame_rate())), 10, 20)

@@ -34,7 +34,7 @@ def draw():
                 face.set_vertex(j, pos.x, pos.y, pos.z)
 
     if frame_count % 60 == 0:
-        print(frame_rate)
+        print(get_frame_rate())
 
 
 def key_pressed():
