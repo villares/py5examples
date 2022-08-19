@@ -8,7 +8,6 @@ Processing port by Raphaël de Courville.
 
 elevatedshader = None
 
-
 def setup():
     global elevatedshader
     size(640, 360, P2D)
@@ -25,4 +24,4 @@ def draw():
     elevatedshader.set("time", millis() / 1000.0)
     shader(elevatedshader)
     rect(0, 0, width, height)
-    frame.set_title("frame: %d - - fps: %d" % (frame_count, frame_rate))
+    window_title("frame: %d - - fps: %d" % (frame_count, get_frame_rate()))
