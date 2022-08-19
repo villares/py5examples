@@ -3,6 +3,8 @@ Loading URLs.
 
 Click on the button to open a URL in a browser
 """
+import webbrowser
+
 over_button = False
 
 
@@ -26,7 +28,7 @@ def draw():
 
 def mouse_pressed():
     if over_button:
-        link("http://www.processing.org")
+        webbrowser.open("http://www.processing.org", 1, False)
 
 
 def mouse_moved():
