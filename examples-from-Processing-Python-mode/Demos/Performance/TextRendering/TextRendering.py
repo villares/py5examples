@@ -10,10 +10,10 @@ def setup():
 
 def draw():
     background(255)
-    for i in xrange(10000):
+    for i in range(10000):
         x = random(width)
         y = random(height)
         text("HELLO", x, y)
 
     if frame_count % 10 == 0:
-        print frame_rate
+        print(get_frame_rate())
