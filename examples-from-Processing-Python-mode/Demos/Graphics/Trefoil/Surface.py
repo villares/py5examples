@@ -3,7 +3,12 @@ Code to draw a trefoil knot surface, normals and texture coordinates.
 Adapted from the parametric equations example by Philip Rideout:
 http://iphone-3d-programming.labs.oreilly.com/ch03.html
 """
-
+from py5 import (
+    create_shape,
+    TRIANGLES,
+    sin, cos, TWO_PI,
+    Py5Vector
+    )
 
 def create_trefoil(s, ny, nx, tex):
     """
@@ -16,11 +21,11 @@ def create_trefoil(s, ny, nx, tex):
     obj.texture(tex)
 
     for j in range(nx):
-        u0 = float(j) / nx
-        u1 = float(j + 1) / nx
+        u0 = j / nx
+        u1 = (j + 1) / nx
         for i in range(ny):
-            v0 = float(i) / ny
-            v1 = float(i + 1) / ny
+            v0 = i / ny
+            v1 = (i + 1) / ny
 
             p0 = eval_point(u0, v0)
             n0 = eval_normal(u0, v0)

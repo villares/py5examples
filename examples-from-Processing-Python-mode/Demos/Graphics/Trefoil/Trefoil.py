@@ -1,13 +1,13 @@
 """
 Trefoil, Andres Colubri
 A parametric surface is textured procedurally
-by drawing on an offscreen Py5Graphics surface.
+by drawing on an offscreen PGraphics surface.
 """
 from Surface import *
 
 
 def setup():
-    global pg, trefoil  # PGraphics, PShape
+    global pg, trefoil  # Py5Graphics, Py5Shape
     size(1024, 768, P3D)
 
     texture_mode(NORMAL)
@@ -21,7 +21,7 @@ def setup():
     pg.fill(255, 0, 0, 200)
     pg.end_draw()
 
-    # Saving trefoil surface into a PShape3D object
+    # Saving trefoil surface into a Py5Shape3D object
     trefoil = create_trefoil(350, 60, 15, pg)
 
 
