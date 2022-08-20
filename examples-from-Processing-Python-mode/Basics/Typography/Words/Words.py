@@ -11,7 +11,7 @@ def setup():
     size(640, 360)
 
     # Create the font
-    print_array(PFont.list())
+    print('\n'.join(Py5Font.list()))
     f = create_font("Georgia", 24)
     text_font(f)
 

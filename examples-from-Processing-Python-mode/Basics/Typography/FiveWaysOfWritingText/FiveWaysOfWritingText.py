@@ -1,4 +1,4 @@
-# Demonstration of the 5 ways of calling text() in Python mode.
+# Demonstration of the 5 ways of calling text().
 
 def setup():
     size(500, 500, P3D)
