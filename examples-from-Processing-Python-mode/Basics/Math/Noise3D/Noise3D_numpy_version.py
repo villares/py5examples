@@ -17,14 +17,12 @@ def setup():
     size(640, 360)
     frame_rate(30)
 
-
 def draw():
     global zoff
     # Optional: adjust noise detail here
     # noiseDetail(8,0.65f)
     load_np_pixels()
     xoff = 0.0  # Start xoff at 0
-
     # For every x,y coordinate in a 2D space, calculate a noise value and
     # produce a brightness value
     for x in range(width):
@@ -32,12 +30,10 @@ def draw():
         yoff = 0.0     # For every xoff, start yoff at 0
         for y in range(height):
             yoff += increment  # Increment yoff
-
             # Calculate noise and scale by 255
             bright = noise(xoff, yoff, zoff) * 255
             # Try using this line instead
             # float bright = random(0,255)
-
             # Set each pixel onscreen to a grayscale value
             np_pixels[y, x, 1:] = [bright, bright, bright]
     update_np_pixels()
