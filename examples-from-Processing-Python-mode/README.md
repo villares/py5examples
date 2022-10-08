@@ -1,13 +1,15 @@
 ## Converting the Processing Python mode examples to py5
 
-### A first attempt
+### A first attempt, you can help!
 
 This is a very rough convertion, you can help by testing the examples and opening an issue!
+
+Open an issue here if you find a broken example: https://github.com/villares/py5examples/issues
 
 ### Conversion notes
 
 This might need change in the future:
-- {{1}} `from py5 import *` for secondary .py files of a sketch
+- `from py5 import *` for secondary .py files of a sketch
 
 Try some numpy optimization?
 
