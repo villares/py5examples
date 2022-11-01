@@ -14,7 +14,7 @@ ints = [int(x) for x in strings]
 assert ints == [12, 47, 3]
 
 # It's easy to build a function that converts something to
-# an int, and providea a default value when there's no
+# an int, and provides a default value when there's no
 # sensible conversion.
 def to_int(x, default=0):
     try:
