@@ -25,7 +25,7 @@ def setup():
         amplitude.append(random(10, 30))
         period = random(100, 300)  # How many pixels before the wave repeats
         dx.append((TWO_PI / period) * xspacing)
-    for _ in range(w / xspacing + 1):
+    for _ in range(w // xspacing + 1):
         yvalues.append(0.0)
 
 
