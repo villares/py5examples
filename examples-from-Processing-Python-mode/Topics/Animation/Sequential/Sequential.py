@@ -14,18 +14,18 @@ def setup():
     size(640, 360)
     frame_rate(24)
 
-    images[0] = load_image("PT_anim0000.gif")
-    images[1] = load_image("PT_anim0001.gif")
-    images[2] = load_image("PT_anim0002.gif")
-    images[3] = load_image("PT_anim0003.gif")
-    images[4] = load_image("PT_anim0004.gif")
-    images[5] = load_image("PT_anim0005.gif")
-    images[6] = load_image("PT_anim0006.gif")
-    images[7] = load_image("PT_anim0007.gif")
-    images[8] = load_image("PT_anim0008.gif")
-    images[9] = load_image("PT_anim0009.gif")
-    images[10] = load_image("PT_anim0010.gif")
-    images[11] = load_image("PT_anim0011.gif")
+    images[0] = load_image(Path('frames') / 'PT_anim0000.gif')
+    images[1] = load_image(Path('frames') / 'PT_anim0001.gif')
+    images[2] = load_image(Path('frames') / 'PT_anim0002.gif')
+    images[3] = load_image(Path('frames') / 'PT_anim0003.gif')
+    images[4] = load_image(Path('frames') / 'PT_anim0004.gif')
+    images[5] = load_image(Path('frames') / 'PT_anim0005.gif')
+    images[6] = load_image(Path('frames') / 'PT_anim0006.gif')
+    images[7] = load_image(Path('frames') / 'PT_anim0007.gif')
+    images[8] = load_image(Path('frames') / 'PT_anim0008.gif')
+    images[9] = load_image(Path('frames') / 'PT_anim0009.gif')
+    images[10] = load_image(Path('frames') / 'PT_anim0010.gif')
+    images[11] = load_image(Path('frames') / 'PT_anim0011.gif')
 
     # If you don't want to load each image separately
     # and you know how many frames you have, you
@@ -33,7 +33,7 @@ def setup():
     # The nf() command does number formatting, which will
     # ensure that the number is (in this case) 4 digits.
     # Using a list comprehension:
-    # images = [loadImage('PT_anim' + nf(i, 4) + '.gif')
+    # images = [loadImage(Path('frames') / 'PT_anim' + nf(i, 4) + '.gif')
     #           for i in range(numFrames)]
     #
 

@@ -1,14 +1,19 @@
+# companion to AnimatedScrite.py
+
 # Class for animating a sequence of GIFs
+from pathlib import Path
+from py5 import *
+
 class Animation(object):
 
-    def __init__(self, image_prefix, count):
+    def __init__(self, image_prefix, count, images_folder='images'):
         self.frame = 0
         self.image_count = count
-        self.images = [Py5Image] * self.image_count
+        self.images = []
         for i in range(self.image_count):
-            # Use nf() to number format 'i' into four digits
-            filename = image_prefix + nf(i, 4) + ".gif"
-            self.images[i] = load_image(filename)
+            # Use f'{i:04}' to format i into four digits
+            filename = Path(images_folder) / f'{image_prefix}{i:04}.gif'
+            self.images.append(load_image(filename))
 
     def display(self, xpos, ypos):
         self.frame = (self.frame + 1) % self.image_count
