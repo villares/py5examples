@@ -18,7 +18,7 @@ def draw():
     global spin
     background(51)
 
-    if not is_mouse_pressied:
+    if not is_mouse_pressed:
         lights()
 
     spin += 0.01
