@@ -20,7 +20,7 @@ def setup():
 def draw():
     background(51)
     # Center where we will draw all the vertices
-    translate(width / 2 - uk.width / 2, height / 2 - uk.height / 2)
+    translate(width / 2 - uk.get_width() / 2, height / 2 - uk.get_height() / 2)
 
     # Iterate over the children
     children = uk.get_child_count()
