@@ -1,3 +1,6 @@
+# companion
+from py5 import *
+
 class Egg(object):
 
     def __init__(self, xpos, ypos, t, s):

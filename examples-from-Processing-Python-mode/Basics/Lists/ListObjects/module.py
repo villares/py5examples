@@ -1,3 +1,6 @@
+# companiion
+from py5 import *
+
 class MovingBall(object):
 
     # Constructor

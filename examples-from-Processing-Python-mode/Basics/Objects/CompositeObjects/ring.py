@@ -1,3 +1,6 @@
+# companion
+from py5 import *
+
 class Ring(object):
 
     def start(self, xpos, ypos):
@@ -10,7 +13,7 @@ class Ring(object):
     def grow(self):
         if self.on:
             self.diameter += 0.5
-            if self.diameter > width * 2:
+            if self.diameter > width() * 2:
                 self.diameter = 0.0
 
     def display(self):
