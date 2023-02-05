@@ -22,7 +22,7 @@ def draw():
     global signal, direction
     if signal > img.height - 1 or signal < 0:
         direction = direction * -1
-    if mouse_pressed:
+    if is_mouse_pressed:
         signal = abs(mouse_y % img.height)
     else:
         signal += (0.3 * direction)

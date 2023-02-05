@@ -29,7 +29,7 @@ def draw():
     xvals[width - 1] = mouse_x
     yvals[width - 1] = mouse_y
 
-    if(mouse_pressed):
+    if is_mouse_pressed:
         bvals[width - 1] = 0
     else:
         bvals[width - 1] = 255

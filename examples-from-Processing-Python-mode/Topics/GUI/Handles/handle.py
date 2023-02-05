@@ -1,3 +1,6 @@
+# companion to Handles.py
+from py5 import *
+
 class Handle(object):
 
     def __init__(self, x, y, stretch, size, others):
@@ -33,7 +36,7 @@ class Handle(object):
         self.over = over_rect(self.box_x, self.box_y, self.size, self.size)
 
     def press_event(self):
-        if self.over and mouse_pressed or self.locked:
+        if self.over and is_mouse_pressed() or self.locked:
             self.press = True
             self.locked = True
         else:

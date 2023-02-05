@@ -29,7 +29,7 @@ def draw():
     background(0)
     nmx += (mouse_x - nmx) / 20
     nmy += (mouse_y - nmy) / 20
-    if mouse_pressed:
+    if is_mouse_pressed:
         scale_val += 0.005
     else:
         scale_val -= 0.01

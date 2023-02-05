@@ -1,3 +1,6 @@
+# companion to Scrollbar.py
+from py5 import * 
+
 class HScrollbar(object):
 
     def __init__(self, xpos, ypos, s_width, s_height, loosetemp):
@@ -20,7 +23,7 @@ class HScrollbar(object):
 
     def update(self):
         self.over = self.over_event()
-        self.locked = mouse_pressed and self.over
+        self.locked = is_mouse_pressed() and self.over
         if self.locked:
             self.newspos = constrain(mouse_x - self.s_height / 2,
                                      self.spos_min, self.spos_max)

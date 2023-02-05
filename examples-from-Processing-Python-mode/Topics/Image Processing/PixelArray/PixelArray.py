@@ -24,7 +24,7 @@ def draw():
     global signal, direction
     if signal > img.width * img.height - 1 or signal < 0:
         direction = direction * -1
-    if mouse_pressed:
+    if is_mouse_pressed:
         mx = constrain(mouse_x, 0, img.width - 1)
         my = constrain(mouse_y, 0, img.height - 1)
         signal = my * img.width + mx

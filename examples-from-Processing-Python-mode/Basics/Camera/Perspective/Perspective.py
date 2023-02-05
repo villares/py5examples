@@ -29,7 +29,7 @@ def draw():
         fov = .0001
     camera_z = camera_y / tan(fov / 2.0)
     aspect = float(width) / float(height)
-    if mouse_pressed:
+    if is_mouse_pressed:
         aspect = aspect / 2.0
     perspective(fov, aspect, camera_z / 10.0, camera_z * 10.0)
     translate(width / 2 + 30, height / 2, 0)

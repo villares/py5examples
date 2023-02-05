@@ -19,7 +19,7 @@ def setup():
 def draw():
     global offset
     # Draw only when mouse is pressed
-    if mouse_pressed:
+    if is_mouse_pressed:
         offset += 5
         radius = cos(radians(offset)) * 12.0
         for angle in range(0, 360, 75):

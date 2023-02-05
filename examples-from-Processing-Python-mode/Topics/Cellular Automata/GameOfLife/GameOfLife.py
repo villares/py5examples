@@ -65,7 +65,7 @@ def draw():
             iteration()
             last_recorded_time = millis()
     # Create new cells manually on pause
-    if pause and mouse_pressed:
+    if pause and is_mouse_pressed:
         # Map and adef out of bound errors
         x_cell_over = int(map(mouse_x, 0, width, 0, width / cell_size))
         x_cell_over = constrain(x_cell_over, 0, width / cell_size - 1)
@@ -79,7 +79,7 @@ def draw():
             cells[x_cell_over][y_cell_over] = 1  # Make alive
             fill(alive)  # Fill alive color
     # And then save to buffer once mouse goes up
-    elif pause and not mouse_pressed:
+    elif pause and not is_mouse_pressed:
         # Save cells to buffer
         # (so we opeate with one array keeping the other intact)
         for x in range(grid_w):

@@ -12,5 +12,5 @@ def setup():
 
 def draw():
     stroke(255)
-    if mouse_pressed:
+    if is_mouse_pressed:
         line(mouse_x, mouse_y, pmouse_x, pmouse_y)

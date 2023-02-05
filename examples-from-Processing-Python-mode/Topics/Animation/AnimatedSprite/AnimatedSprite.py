@@ -31,7 +31,7 @@ def draw():
     dx = mouse_x - xpos
     xpos = xpos + dx / drag
     # Display the sprite at the position xpos, ypos
-    if mouse_pressed:
+    if is_mouse_pressed:
         background(153, 153, 0)
         animation1.display(xpos - animation1.get_width() / 2, ypos)
     else:

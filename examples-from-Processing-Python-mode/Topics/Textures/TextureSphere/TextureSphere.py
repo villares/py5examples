@@ -76,7 +76,7 @@ def render_globe():
 
     # Implements mouse control (interaction will be inverted when sphere is
     # upside down).
-    if mouse_pressed:
+    if is_mouse_pressed:
         velocity_x += (mouse_y - pmouse_y) * 0.01
         velocity_y -= (mouse_x - pmouse_x) * 0.01
 
