@@ -17,7 +17,7 @@ coswave = []
 def setup():
     size(640, 360)
     for i in range(width):
-        amount = map(i, 0, width, 0, PI)
+        amount = remap(i, 0, width, 0, PI)
         # "append" adds an element to the end of a list.
         coswave.append(abs(cos(amount)))
     background(255)

@@ -21,7 +21,7 @@ def draw():
 def pie_chart(diameter, data):
     last_angle = 0
     for i, angle in enumerate(data):
-        gray = map(i, 0, len(data), 0, 255)
+        gray = remap(i, 0, len(data), 0, 255)
         fill(gray)
         arc(width / 2, height / 2, diameter, diameter,
             last_angle, last_angle + radians(angle))

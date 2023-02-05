@@ -17,7 +17,7 @@ def setup():
 def draw():
     background(0.0)
 
-    r1 = map(mouse_x, 0, width, 0, height)
+    r1 = remap(mouse_x, 0, width, 0, height)
     r2 = height - r1
 
     fill(r1)

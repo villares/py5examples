@@ -19,8 +19,8 @@ def draw():
         for y in range(0, height + 1, 60):
             with push_matrix():
                 translate(x, y)
-                rotate_y(map(mouse_x, 0, width, 0, PI))
-                rotate_x(map(mouse_y, 0, height, 0, PI))
+                rotate_y(remap(mouse_x, 0, width, 0, PI))
+                rotate_x(remap(mouse_y, 0, height, 0, PI))
                 box(90)
 
 

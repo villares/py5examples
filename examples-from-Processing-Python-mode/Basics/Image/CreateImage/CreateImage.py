@@ -12,7 +12,7 @@ def setup():
     img = create_image(230, 230, ARGB)
     pix_count = len(img.pixels)
     for i in range(pix_count):
-        a = map(i, 0, pix_count, 255, 0)
+        a = remap(i, 0, pix_count, 255, 0)
         img.pixels[i] = color(0, 153, 204, a)
 
 

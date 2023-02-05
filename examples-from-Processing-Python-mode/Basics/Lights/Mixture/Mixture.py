@@ -27,6 +27,6 @@ def draw():
                0, -0.5, -0.5,  # Direction
                PI / 2, 2)      # Angle, concentration
 
-    rotate_y(map(mouse_x, 0, width, 0, PI))
-    rotate_x(map(mouse_y, 0, height, 0, PI))
+    rotate_y(remap(mouse_x, 0, width, 0, PI))
+    rotate_x(remap(mouse_y, 0, height, 0, PI))
     box(150)

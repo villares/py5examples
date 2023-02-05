@@ -32,5 +32,5 @@ def key_pressed():
     else:
         # It's a letter key, fill a rectangle
         fill(millis() % 255)
-        x = map(key_index, 0, 25, 0, width - rect_width)
+        x = remap(key_index, 0, 25, 0, width - rect_width)
         rect(x, 0, rect_width, height)

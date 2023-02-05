@@ -33,13 +33,13 @@ def set_gradient(x, y, w, h, c1, c2, axis):
     no_fill()
     if axis == Y_AXIS:  # Top to bottom gradient
         for i in range(y, y + h + 1):
-            inter = map(i, y, y + h, 0, 1)
+            inter = remap(i, y, y + h, 0, 1)
             c = lerp_color(c1, c2, inter)
             stroke(c)
             line(x, i, x + w, i)
     elif axis == X_AXIS:  # Left to right gradient
         for i in range(x, x + w + 1):
-            inter = map(i, x, x + w, 0, 1)
+            inter = remap(i, x, x + w, 0, 1)
             c = lerp_color(c1, c2, inter)
             stroke(c)
             line(i, y, i, y + h)

@@ -21,7 +21,7 @@ def setup():
 
 
 def draw():
-    pointillize = map(mouse_x, 0, width, small_point, large_point)
+    pointillize = remap(mouse_x, 0, width, small_point, large_point)
     x = int(random(img.width))
     y = int(random(img.height))
     pix = img.get(x, y)

@@ -26,7 +26,7 @@ def setup():
 def draw():
     lights()
     background(0)
-    far = map(mouse_x, 0, width, 120, 400)
+    far = remap(mouse_x, 0, width, 120, 400)
     if show_perspective:
         perspective(PI / 3.0, float(width) / float(height), 10, far)
     else:

@@ -21,7 +21,7 @@ def setup():
 def draw():
     background(204)
 
-    num_points = int(map(mouse_x, 0, width, 6, 60))
+    num_points = int(remap(mouse_x, 0, width, 6, 60))
     angle = 0
     angle_step = 180.0 / num_points
 
