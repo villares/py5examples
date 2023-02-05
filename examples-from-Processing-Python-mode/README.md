@@ -2,7 +2,7 @@
 
 ### A first attempt, you can help!
 
-This is a very rough convertion, you can help by testing the examples and opening an issue!
+This is a very rough conversion, you can help by testing the examples and opening an issue!
 
 Open an issue here if you find a broken example: https://github.com/villares/py5examples/issues
 
