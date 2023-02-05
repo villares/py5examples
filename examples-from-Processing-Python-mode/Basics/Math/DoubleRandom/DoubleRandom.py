@@ -20,5 +20,5 @@ def draw():
     background(0)
     rand = 0
     for i in range(steps):
-        point((width / steps) * i, (height / 2) + random(-rand, rand))
+        point((width / steps) * i, (height / 2) + random(-abs(rand), abs(rand)))
         rand += random(-5, 5)
