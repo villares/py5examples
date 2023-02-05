@@ -14,8 +14,8 @@ balls = []
 def setup():
     size(640, 360)
     no_stroke()
-    for y in range(height / unit):
-        for x in range(width / unit):
+    for y in range(height // unit):
+        for x in range(width // unit):
             balls.append(
                 MovingBall(
                     x * unit,
