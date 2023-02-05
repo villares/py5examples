@@ -18,6 +18,6 @@ def draw():
     background(0)
     for i in range(0, width, 20):
         for j in range(0, height, 20):
-            size = dist(mouse_x, mouse_y, i, j)
-            size = size / max_distance * 66
-            ellipse(i, j, size, size)
+            s = dist(mouse_x, mouse_y, i, j)
+            s = s / max_distance * 66
+            ellipse(i, j, s, s)
