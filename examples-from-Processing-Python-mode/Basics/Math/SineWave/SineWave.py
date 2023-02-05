@@ -21,7 +21,7 @@ def setup():
     w = width + 16
     # Using a list to store height values for the wave.
     global yvalues
-    yvalues = [0.0] * (w / xspacing)
+    yvalues = [0.0] * (w // xspacing)
 
 
 def draw():
