@@ -8,10 +8,12 @@ boolean value "x" is True, vertical black lines are drawn and when
 the boolean value "x" is False, horizontal gray lines are drawn.
 """
 
-b = False
 size(640, 360)
 background(0)
 stroke(255)
+
+b = False
+
 d = 20
 middle = width / 2
 
