@@ -27,7 +27,7 @@ def draw():
     translate(width / 2, height / 2)
 
     for i in range(num):
-        gray = map(i, 0, num - 1, 0, 255)
+        gray = remap(i, 0, num - 1, 0, 255)
         with push_matrix():
             fill(gray)
             rotate_y(a + offset * i)

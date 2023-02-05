@@ -19,6 +19,6 @@ def setup():
 def draw():
     background(102)
     translate(width / 2, height / 2)
-    zoom = map(mouse_x, 0, width, 0.1, 4.5)
+    zoom = remap(mouse_x, 0, width, 0.1, 4.5)
     scale(zoom)
     shape(bot, -140, -140)
