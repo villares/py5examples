@@ -1,3 +1,6 @@
+# companion to sketch Arctangent.py
+from py5 import *
+
 class Eye:
 
     def __init__(self, tx, ty, ts):
