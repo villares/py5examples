@@ -1,6 +1,6 @@
 ## Converting the Processing Python mode examples to py5
 
-Processing IDE comes ready with a big collection of examples. Processing.py a.k.a Processing Python Mode you had almost all those examples ported/converted to Python. Now we want to have them working on py5!
+Processing IDE comes ready with a big collection of examples. In [Processing.py](https://py.processing.org) a.k.a Processing Python Mode you had almost all those examples ported/converted to Python. Now we want to have them working on py5!
 
 ### A first attempt, you can help!
 
