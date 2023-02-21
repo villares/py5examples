@@ -9,9 +9,9 @@ Open an issue here if you find a broken example: https://github.com/villares/py5
 
 ### How to run this code?
 
-To run this, you'll need [py5](https://py5coding.org). I strongly suggest using [Thonny IDE](https://thonny.org) and the [thonny-py5mode](https://github.com/tabreturn/thonny-py5mode/) plugin.
+To run this, you'll need [py5](https://py5coding.org). I strongly suggest using [Thonny IDE](https://thonny.org) and the [thonny-py5mode](https://github.com/tabreturn/thonny-py5mode/) plugin. [Step by step instructions here](https://abav.lugaralgum.com/como-instalar-py5/index-EN.html).
 
-Step by step instructions here: https://abav.lugaralgum.com/como-instalar-py5/index-EN.html
+To make these converted examples "look and feel" closer to the Processing & Processing Python mode collection, they are written mostly in the style of **imported mode**. We could have also a collection of **module mode** examples, and even **class mode**, etc. [Read about the py5 modes here](https://py5coding.org/content/py5_modes.html).
 
 ### Conversion notes
 
