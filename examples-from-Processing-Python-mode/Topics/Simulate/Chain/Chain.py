@@ -27,7 +27,7 @@ def draw():
 
 class Spring2D(object):
 
-    def __init__(self, xpos, ypos, m, g):
+    def __init__(self, xpos, ypos, m, grav):
         # The x- and y-axis velocities
         self.vx = 0.0
         self.vy = 0.0
@@ -38,7 +38,7 @@ class Spring2D(object):
         self.stiffness = 0.2
         self.damping = 0.7
         self.mass = m
-        self.gravity = g
+        self.gravity = grav
 
     def update(self, target_x, target_y):
         force_x = (target_x - self.x) * self.stiffness

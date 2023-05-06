@@ -1,3 +1,5 @@
+from py5 import *
+
 class Orb(object):
     # A damping of 80% slows it down when it hits the ground.
     Damping = 0.8
@@ -26,8 +28,8 @@ class Orb(object):
 
     # Check boundaries of window.
     def check_wall_collision(self):
-        if self.position.x > width - self.radius:
-            self.position.x = width - self.radius
+        if self.position.x > width() - self.radius:
+            self.position.x = width() - self.radius
             self.velocity.x *= -Orb.Damping
 
         elif self.position.x < self.radius:
