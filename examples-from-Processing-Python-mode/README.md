@@ -16,18 +16,14 @@ To make these converted examples "look and feel" closer to the Processing & Proc
 
 ### Conversion notes
 
-- This might need change in the future:
-
-For secondary .py files of a sketch I have used this, which is not very nice:
+- Sketches with source in multiple files:
+  - For secondary .py files of a sketch I have used this, which is not very nice:
 `from py5 import *` 
-
-I should migrate to using the special `# PY5 IMPORTED MODE CODE` comment as explained at [Importing imported mode code](https://py5coding.org/content/importing_py5_code.html#importing-imported-mode-code)
+  - I should migrate to using the special `# PY5 IMPORTED MODE CODE` comment as explained at [Importing imported mode code](https://py5coding.org/content/importing_py5_code.html#importing-imported-mode-code)
+  
 - Try some numpy optimization?
-
   - Basics/Math/Graphing2DEquation/Graphing2DEquation
-  - .py
   - There are some *noise* ideas being discussed here: https://github.com/py5coding/py5generator/discussions/232
 
 - Not good yet:
-
   - Topics/Create Shapes/ParticleSystemPShape/ParticleSystemPShape.py
