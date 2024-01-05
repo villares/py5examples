@@ -21,12 +21,11 @@ To make these converted examples "look and feel" closer to the Processing & Proc
 For secondary .py files of a sketch I have used this, which is not very nice:
 `from py5 import *` 
 
-Using *module mode*, a.k.a `import py5`, can be done but also has issues.
-This has to be thought out better.
-
+I should migrate to using the special `# PY5 IMPORTED MODE CODE` comment as explained at [Importing imported mode code](https://py5coding.org/content/importing_py5_code.html#importing-imported-mode-code)
 - Try some numpy optimization?
 
-  - Basics/Math/Graphing2DEquation/Graphing2DEquation.py
+  - Basics/Math/Graphing2DEquation/Graphing2DEquation
+  - .py
   - There are some *noise* ideas being discussed here: https://github.com/py5coding/py5generator/discussions/232
 
 - Not good yet:
