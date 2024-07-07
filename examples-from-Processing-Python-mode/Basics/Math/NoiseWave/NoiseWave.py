@@ -25,7 +25,7 @@ def draw():
         for x in range(0, width, 10):
             # Calculate a y value according to noise, map to
             y = remap(noise(xoff, yoff), 0, 1, 200, 300)  # Option #1: 2D Noise
-            # y = map(noise(xoff), 0, 1, 200, 300)       # Option #2: 1D Noise
+            # y = remap(noise(xoff), 0, 1, 200, 300)       # Option #2: 1D Noise
 
             # Set the vertex
             vertex(x, y)

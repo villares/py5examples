@@ -1,3 +1,4 @@
+# PY5 IMPORTED MODE CODE
 """
 Acceleration with Vectors
 by Daniel Shiffman.
@@ -8,7 +9,6 @@ The motion is controlled by affecting the acceleration (in this case towards the
 """
 
 # The Mover tracks location, velocity, and acceleration
-
 
 class Mover(object):
 
@@ -28,7 +28,7 @@ class Mover(object):
         # Velocity changes according to acceleration
         self.velocity += self.acceleration
         # Limit the velocity by topspeed
-        self.velocity.limit(self.topspeed)
+        self.velocity.set_limit(self.topspeed)
         # Location changes by velocity
         self.location += self.velocity
 

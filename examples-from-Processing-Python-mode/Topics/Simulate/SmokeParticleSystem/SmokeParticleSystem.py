@@ -22,7 +22,7 @@ def setup():
 def draw():
     background(0)
     # Calculate a "wind" force based on mouse horizontal position.
-    dx = map(mouse_x, 0, width, -0.2, 0.2)
+    dx = remap(mouse_x, 0, width, -0.2, 0.2)
     wind = Py5Vector(dx, 0)
     ps.apply_force(wind)
     ps.run()

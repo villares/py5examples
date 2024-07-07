@@ -18,8 +18,8 @@ def setup():
 
 def draw():
     conway.set("time", millis() / 1000.0)
-    x = map(mouse_x, 0, width, 0, 1)
-    y = map(mouse_y, 0, height, 1, 0)
+    x = remap(mouse_x, 0, width, 0, 1)
+    y = remap(mouse_y, 0, height, 1, 0)
     conway.set("mouse", x, y)
     pg.begin_draw()
     pg.background(0)

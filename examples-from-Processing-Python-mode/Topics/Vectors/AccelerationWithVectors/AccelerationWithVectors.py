@@ -11,12 +11,10 @@ Simulate/ForcesWithVectors, Simulate/GravitationalAttraction3D
 """
 from mover import Mover
 
-
 def setup():
     global mover
     size(640, 360)
     mover = Mover()
-
 
 def draw():
     background(0)
