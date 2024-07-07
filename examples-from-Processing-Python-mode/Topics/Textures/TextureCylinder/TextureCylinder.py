@@ -29,8 +29,8 @@ def draw():
     background(0)
 
     translate(half_width, half_height)
-    rotate_x(map(mouse_y, 0, height, -PI, PI))
-    rotate_y(map(mouse_x, 0, width, -PI, PI))
+    rotate_x(remap(mouse_y, 0, height, -PI, PI))
+    rotate_y(remap(mouse_x, 0, width, -PI, PI))
 
     begin_shape(QUAD_STRIP)
     texture(img)

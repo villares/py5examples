@@ -67,9 +67,9 @@ def draw():
     # Create new cells manually on pause
     if pause and is_mouse_pressed:
         # Map and adef out of bound errors
-        x_cell_over = int(map(mouse_x, 0, width, 0, width / cell_size))
+        x_cell_over = int(remap(mouse_x, 0, width, 0, width / cell_size))
         x_cell_over = constrain(x_cell_over, 0, width / cell_size - 1)
-        y_cell_over = int(map(mouse_y, 0, height, 0, height / cell_size))
+        y_cell_over = int(remap(mouse_y, 0, height, 0, height / cell_size))
         y_cell_over = constrain(y_cell_over, 0, height / cell_size - 1)
         # Check against cells in buffer
         if cells_buffer[x_cell_over][y_cell_over] == 1:  # Cell is alive

@@ -21,7 +21,7 @@ def setup():
 def draw():
     background(0)
     translate(half_width, half_height, 0)
-    rotate_y(map(mouse_x, 0, width, -PI, PI))
+    rotate_y(remap(mouse_x, 0, width, -PI, PI))
 
     with begin_shape():
         texture(img)

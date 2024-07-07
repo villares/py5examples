@@ -32,7 +32,7 @@ def setup():
 def draw():
     global pic_alpha
     sel_mode, name = modes[current_mode]
-    pic_alpha = int(map(mouse_x, 0, width, 0, 255))
+    pic_alpha = int(remap(mouse_x, 0, width, 0, 255))
     background(0)
     tint(255, 255)
     image(img1, 0, 0)
@@ -54,4 +54,4 @@ def mouse_pressed():
 def mouse_dragged():
     global pic_alpha
     if height - 50 < mouse_y:
-        pic_alpha = int(map(mouse_x, 0, width, 0, 255))
+        pic_alpha = int(remap(mouse_x, 0, width, 0, 255))

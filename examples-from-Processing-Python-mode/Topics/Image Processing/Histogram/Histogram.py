@@ -27,8 +27,8 @@ stroke(255)
 # Draw half of the histogram (skip every second value)
 for i in range(0, img.width, 2):
     # Map i (from 0..img.width) to a location in the histogram (0..255)
-    which = int(map(i, 0, img.width, 0, 255))
+    which = int(remap(i, 0, img.width, 0, 255))
     # Convert the histogram value to a location between
     # the bottom and the top of the picture
-    y = int(map(hist[which], 0, hist_max, img.height, 0))
+    y = int(remap(hist[which], 0, hist_max, img.height, 0))
     line(i, img.height, i, y)
