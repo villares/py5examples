@@ -1,3 +1,5 @@
+# PY5 IMPORTED MODE CODE
+
 # The Flock (a list of Boid objects)
 class Flock(object):
 

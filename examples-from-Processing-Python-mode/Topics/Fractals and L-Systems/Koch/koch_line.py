@@ -3,16 +3,16 @@
 # http://natureofcode.com
 # Koch Curve
 # A class to describe one line segment in the fractal.
-# Includes methods to calculate midPVectors along the line according to
+# Includes methods to calculate midPy5Vectors along the line according to
 # the Koch algorithm.
 
 
 class KochLine(object):
 
     def __init__(self, start, end):
-        # Two PVectors,
-        # a is the "left" PVector and
-        # b is the "right PVector
+        # Two Py5Vectors,
+        # a is the "left" Py5Vector and
+        # b is the "right Py5Vector
         self.a = start.get()
         self.b = end.get()
 
@@ -34,7 +34,7 @@ class KochLine(object):
         return v
 
     # More complicated, have to use a little trig to figure out where this
-    # PVector is!
+    # Py5Vector is!
     def kochmiddle(self):
         v = self.b - self.a
         v /= 3

@@ -30,7 +30,7 @@ def setup():
         v *= 100
         circle.append(v)
 
-        # Let's fill our morph ArrayList with blank PVectors while we're at it.
+        # Let's fill our morph ArrayList with blank Py5Vectors while we're at it.
         morph.append(Py5Vector())
 
     # A square is a bunch of vertices along straight lines.
@@ -76,7 +76,7 @@ def draw():
         v2.lerp(v1, 0.1)
 
         # Check how far we are from target.
-        total_distance += PVector.dist(v1, v2)
+        total_distance += Py5Vector.dist(v1, v2)
 
     # If all the vertices are close, switch shape.
     if total_distance < 0.1:

@@ -1,3 +1,5 @@
+# PY5 IMPORTED MODE CODE
+
 """
 Forces (Gravity and Fluid Resistence) with Vectors
 by Daniel Shiffman.
@@ -33,7 +35,7 @@ class Liquid(object):
         speed = m.velocity.mag
         drag_magnitude = self.c * speed * speed
         # Direction is inverse of velocity.
-        drag = m.velocity.get()
+        drag = m.velocity.copy
         drag *= -1
         # Scale according to magnitude.
         drag.set_mag(drag_magnitude)

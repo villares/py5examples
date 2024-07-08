@@ -60,7 +60,7 @@ def draw():
     # Detect and handle collision.
     for coord in coords:
         # Check distance between ellipse and base top coordinates.
-        if PVector.dist(position, coord) < radius:
+        if Py5Vector.dist(position, coord) < radius:
             # Calculate dot product of incident vector and base top normal.
             dot = incidence.dot(normal)
 
@@ -100,7 +100,7 @@ def draw():
 def create_ground():
     global coords
     # Calculate length of base top.
-    base_length = PVector.dist(base1, base2)
+    base_length = Py5Vector.dist(base1, base2)
 
     # A list of subpoints along the floor path.
     # Fill base top coordinate array.

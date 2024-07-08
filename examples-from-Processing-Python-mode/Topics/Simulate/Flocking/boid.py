@@ -1,3 +1,5 @@
+# PY5 IMPORTED MODE CODE
+
 # The Boid class
 class Boid(object):
 
@@ -14,7 +16,7 @@ class Boid(object):
         self.flock(boids)
         self.update()
         self.borders()
-        self.render()
+        self.display()
 
     def apply_force(self, force):
         # We could add mass here if we want A = F / M
@@ -52,7 +54,7 @@ class Boid(object):
         # Scale to maximum speed.
         desired.normalize()
         desired *= self.maxspeed
-        # Above two lines of code below could be condensed with PVector setMag() method.
+        # Above two lines of code below could be condensed with Py5Vector setMag() method.
         # Not using this method until Processing.js catches up.
         # desired.setMag(maxspeed)
         # Steering = Desired minus Velocity
@@ -60,7 +62,7 @@ class Boid(object):
         steer.limit(self.maxforce)  # Limit to maximum steering force.
         return steer
 
-    def render(self):
+    def display(self):
         # Draw a triangle rotated in the direction of velocity.
         theta = self.velocity.heading2_d() + radians(90)
         # heading2D() above is now heading() but leaving old syntax until
@@ -94,7 +96,7 @@ class Boid(object):
         count = 0
         # For every boid in the system, check if it's too close.
         for other in boids:
-            d = PVector.dist(self.location, other.location)
+            d = Py5Vector.dist(self.location, other.location)
             # If the distance is greater than 0 and less than an arbitrary
             # amount (0 when you are yourself).
             if 0 < d < desiredseparation:
@@ -111,7 +113,7 @@ class Boid(object):
             steer /= float(count)
         # As long as the vector is greater than 0
         if steer.mag > 0:
-            # First two lines of code below could be condensed with PVector setMag() method.
+            # First two lines of code below could be condensed with Py5Vector setMag() method.
             # Implement Reynolds: Steering = Desired - Velocity
             steer.normalize()
             steer *= self.maxspeed
@@ -126,14 +128,14 @@ class Boid(object):
         sum = Py5Vector(0, 0)
         count = 0
         for other in boids:
-            d = PVector.dist(self.location, other.location)
+            d = Py5Vector.dist(self.location, other.location)
             if 0 < d < neighbordist:
                 sum += other.velocity
                 count += 1
         if count == 0:
             return Py5Vector(0, 0)
         sum /= float(count)
-        # First two lines of code below could be condensed with PVector setMag() method.
+        # First two lines of code below could be condensed with Py5Vector setMag() method.
         # Implement Reynolds: Steering = Desired - Velocity
         sum.normalize()
         sum *= self.maxspeed
@@ -150,7 +152,7 @@ class Boid(object):
         sum = Py5Vector(0, 0)
         count = 0
         for other in boids:
-            d = PVector.dist(self.location, other.location)
+            d = Py5Vector.dist(self.location, other.location)
             if 0 < d < neighbordist:
                 sum += other.location  # Add location.
                 count += 1

@@ -8,8 +8,8 @@ class KochFractal(object):
 
     def __init__(self):
         self.count = 0
-        self.start = Py5Vector(0, height - 20)  # A PVector for the start
-        self.end = Py5Vector(width, height - 20)  # A PVector for the end
+        self.start = Py5Vector(0, height - 20)  # A Py5Vector for the start
+        self.end = Py5Vector(width, height - 20)  # A Py5Vector for the end
         self.lines = []  # A list to keep track of all the lines
         self.restart()
 
@@ -22,7 +22,7 @@ class KochFractal(object):
     def restart(self):
         self.count = 0  # Reset count
         self.lines = []  # Empty the list
-        # Add the initial line (from one end PVector to the other)
+        # Add the initial line (from one end Py5Vector to the other)
         self.lines.append(KochLine(self.start, self.end))
 
     # This is easy, just draw all the lines
@@ -44,13 +44,13 @@ class KochFractal(object):
     def iterate(self, before):
         now = []
         for i in before:
-            # Calculate 5 koch PVectors (done for us by the line object)
+            # Calculate 5 koch Py5Vectors (done for us by the line object)
             a = i.start()
             b = i.kochleft()
             c = i.kochmiddle()
             d = i.kochright()
             e = i.end()
-            # Make line segments between all the PVectors and add them
+            # Make line segments between all the Py5Vectors and add them
             now.append(KochLine(a, b))
             now.append(KochLine(b, c))
             now.append(KochLine(c, d))
