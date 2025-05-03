@@ -7,14 +7,16 @@ in the program by a name, rather than a number.
 size(640, 360)
 no_stroke()
 background(51, 0, 0)
+
 inside = color(204, 102, 0)
 middle = color(204, 153, 0)
 outside = color(153, 51, 0)
-# These statements are equivalent to the statements above.
-# Programmers may use the format they prefer.
-#inside = 0xCC6600
-#middle = 0xCC9900
-#outside = 0x993300
+# Using hexadecimal notation between quotes, starting with #, is also possible.
+# You may use the format you prefer.
+#inside = '#CC6600'
+#middle = '#CC9900'
+#outside ='#993300'
+
 with push_matrix():
     translate(80, 80)
     fill(outside)
