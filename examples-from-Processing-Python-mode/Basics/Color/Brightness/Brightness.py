@@ -12,7 +12,7 @@ last_bar = -1
 
 def setup():
     size(32 * bar_width, 360)
-    color_mode(HSB, width, 100, width)
+    color_mode(HSB, width, 100, height)
     no_stroke()
     background(0)
 
