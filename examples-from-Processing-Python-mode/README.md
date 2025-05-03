@@ -6,7 +6,8 @@ Processing IDE comes ready with a big collection of examples. In [Processing.py]
 
 This might still be a rough conversion, you can help by testing the examples and opening an issue!
 
-Open an issue here if you find a broken example: https://github.com/villares/py5examples/issues
+I'm trying to keep track at this issue: https://github.com/villares/py5examples/issues/1
+Open an issue if you find a broken example: https://github.com/villares/py5examples/issues
 
 ### How to run this code?
 
