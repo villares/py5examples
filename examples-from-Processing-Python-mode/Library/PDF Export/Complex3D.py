@@ -1,5 +1,5 @@
 """
-PDF Complex by Marius Watz (workshop.evolutionzone.com).
+PDF Complex by Marius Watz (http://mariuswatz.com/).
 Example using PDF to output complex 3D geometry for print.
 press "s" to save a PDF.
 """
@@ -10,7 +10,6 @@ SINCOS_PRECISION = 1.0
 SINCOS_LENGTH = int(360.0 / SINCOS_PRECISION)
 # System data
 do_save = False
-
 
 def setup():
     global sin_lut, cos_lut, num, pt, style
@@ -63,7 +62,7 @@ def setup():
 def draw():
     global do_save
     if do_save:
-        # set up PGraphicsPDF for use with beginRaw()
+        # set up Py5Graphics for use with begin_raw()
         pdf = begin_raw(PDF, "pdf_complex_out.pdf")
         # set default Illustrator stroke styles and paint background rect.
         pdf.stroke_join(MITER)
@@ -84,16 +83,30 @@ def draw():
                 stroke(style[i * 2])
                 no_fill()
                 stroke_weight(1)
-                arc_line(0, 0, pt[index + 2], pt[index + 3], pt[index + 4])
+                arc_line(
+                    0,
+                    0,
+                    pt[index + 2],
+                    pt[index + 3],
+                    pt[index + 4])
             elif style[i * 2 + 1] == 1:
                 fill(style[i * 2])
                 no_stroke()
-                arc_line_bars(0, 0, pt[index + 2],
-                              pt[index + 3], pt[index + 4])
+                arc_line_bars(
+                    0,
+                    0,
+                    pt[index + 2],
+                    pt[index + 3],
+                    pt[index + 4])
             else:
                 fill(style[i * 2])
                 no_stroke()
-                arc(0, 0, pt[index + 2], pt[index + 3], pt[index + 4])
+                solid_arc(
+                    0,
+                    0,
+                    pt[index + 2],
+                    pt[index + 3],
+                    pt[index + 4])
             # increase rotation
             pt[index + 0] += pt[index + 5] / 10.0
             pt[index + 1] += pt[index + 5] / 20.0
@@ -101,57 +114,59 @@ def draw():
     if do_save:
         end_raw()
         do_save = False
+    window_title(f'{get_frame_rate():0.1f}')
+
 
 # Get blend of two colors
-
-
 def rgb_blend(fract, r, g, b, r2, g2, b2, a):
     r2, g2, b2 = (r2 - r), (g2 - g), (b2 - b)
     return color(r + r2 * fract, g + g2 * fract, b + b2 * fract, a)
 
 # Draw arc line
-
-
 def arc_line(x, y, deg, rad, w):
     a = int(min(deg / SINCOS_PRECISION, SINCOS_LENGTH - 1.0))
     numlines = int(w / 2)
     for j in range(numlines):
         begin_shape()
-        for i in range(a):
-            vertex(cos_lut[i] * rad + x,
-                   sin_lut[i] * rad + y)
+        vertices(
+            (cos_lut[i] * rad + x,
+             sin_lut[i] * rad + y)
+            for i in range(a))
         end_shape()
         rad += 2
 
 # Draw arc line with bars
-
-
 def arc_line_bars(x, y, deg, rad, w):
     a = int((min(deg / SINCOS_PRECISION, SINCOS_LENGTH - 1.0)))
     a //= 4
-    begin_shape(QUADS)
+    vs = []
     for i in range(0, a, 4):
-        vertex(cos_lut[i] * (rad) + x,
-               sin_lut[i] * (rad) + y)
-        vertex(cos_lut[i] * (rad + w) + x,
-               sin_lut[i] * (rad + w) + y)
-        vertex(cos_lut[i + 2] * (rad + w) + x,
-               sin_lut[i + 2] * (rad + w) + y)
-        vertex(cos_lut[i + 2] * (rad) + x,
-               sin_lut[i + 2] * (rad) + y)
+        vs.extend((
+            (cos_lut[i] * (rad) + x,
+             sin_lut[i] * (rad) + y),
+            (cos_lut[i] * (rad + w) + x,
+             sin_lut[i] * (rad + w) + y),
+            (cos_lut[i + 2] * (rad + w) + x,
+             sin_lut[i + 2] * (rad + w) + y),
+            (cos_lut[i + 2] * (rad) + x,
+             sin_lut[i + 2] * (rad) + y),
+        ))
+    begin_shape(QUADS)
+    vertices(vs)
     end_shape()
 
 # Draw solid arc
-
-
-def arc(x, y, deg, rad, w):
+def solid_arc(x, y, deg, rad, w):
     a = int(min(deg / SINCOS_PRECISION, SINCOS_LENGTH - 1.0))
-    begin_shape(QUAD_STRIP)
+    vs = []
     for i in range(a):
-        vertex(cos_lut[i] * (rad) + x,
-               sin_lut[i] * (rad) + y)
-        vertex(cos_lut[i] * (rad + w) + x,
-               sin_lut[i] * (rad + w) + y)
+        vs.extend((
+            (cos_lut[i] * (rad) + x,
+             sin_lut[i] * (rad) + y),
+            (cos_lut[i] * (rad + w) + x,
+             sin_lut[i] * (rad + w) + y)))
+    begin_shape(QUAD_STRIP)
+    vertices(vs)
     end_shape()
 
 
