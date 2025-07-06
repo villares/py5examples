@@ -6,17 +6,17 @@ EN - Uniform random distribution on the surface of a sphere.
 """
 
 CUANTOS = 16000  # how many
-LISTA = []  # list
-RADIO = 200  # radius
+lista = []  # list
+radio = 200  # radius
 rx = 0
 ry = 0
 
 def setup():
-    global RADIO, LISTA
+    global radio, lista
     size(1024, 768, P3D)
-    RADIO = height / 3.5
+    radio = height / 3.5
     for _ in range(CUANTOS):
-        LISTA.append(Pelo())
+        lista.append(Pelo())
     noise_detail(3)
 
 
@@ -35,9 +35,9 @@ def draw():
     rotate_x(ry)
     fill(0)
     no_stroke()
-    sphere(RADIO)
+    sphere(radio)
 
-    for pelo in LISTA:
+    for pelo in lista:
         pelo.dibujar()
 
 
@@ -46,10 +46,10 @@ class Pelo():
     """A hair"""
 
     def __init__(self):
-        self.z = random(-RADIO, RADIO)
+        self.z = random(-radio, radio)
         self.phi = random(TWO_PI)
         self.largo = random(1.15, 1.2)
-        self.theta = asin(self.z / RADIO)
+        self.theta = asin(self.z / radio)
 
     def dibujar(self):
         """Draw"""
@@ -58,13 +58,13 @@ class Pelo():
 
         thetaff = self.theta + off
         phff = self.phi + offb
-        x = RADIO * cos(self.theta) * cos(self.phi)
-        y = RADIO * cos(self.theta) * sin(self.phi)
-        z = RADIO * sin(self.theta)
+        x = radio * cos(self.theta) * cos(self.phi)
+        y = radio * cos(self.theta) * sin(self.phi)
+        z = radio * sin(self.theta)
 
-        xo = RADIO * cos(thetaff) * cos(phff)
-        yo = RADIO * cos(thetaff) * sin(phff)
-        zo = RADIO * sin(thetaff)
+        xo = radio * cos(thetaff) * cos(phff)
+        yo = radio * cos(thetaff) * sin(phff)
+        zo = radio * sin(thetaff)
 
         xb = xo * self.largo
         yb = yo * self.largo
